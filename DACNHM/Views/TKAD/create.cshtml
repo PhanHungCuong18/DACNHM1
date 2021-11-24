@@ -1,0 +1,45 @@
+﻿@model DACNHM.Models.Admin
+@{
+    ViewBag.Title = "create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card card-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <form class="form-horizontal mt-4">
+                    <div class="form-group">
+                        <b>Tài khoản admin</b>
+                        @Html.EditorFor(model => model.UserAdmin, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UserAdmin, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <b>Mật khẩu admin</b>
+                        @Html.EditorFor(model => model.PassAdmin, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PassAdmin, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <b>Họ tên</b>
+                        @Html.EditorFor(model => model.Hoten, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Hoten, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <a href="@Url.Action("Index","TKAD")" style="background-color: #dc3545; border-radius: 15px" class="btn btn-default">Quay trở lại</a>
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </div>
+                </form>
+            }
+
+        </div>
+
+    </div>
+</div>
+

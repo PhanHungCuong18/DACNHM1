@@ -1,0 +1,1040 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E75464D3-655D-407D-AFC3-8093768083D0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DACNHM</RootNamespace>
+    <AssemblyName>DACNHM</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44313</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\DatLichController.cs" />
+    <Compile Include="Controllers\HienMauController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\QLDatLichController.cs" />
+    <Compile Include="Controllers\QLDotHienController.cs" />
+    <Compile Include="Controllers\QLNDController.cs" />
+    <Compile Include="Controllers\TKADController.cs" />
+    <Compile Include="Controllers\TTSKController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dbQLHM.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbQLHM.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminCSS\assets\extra-libs\sparkline\sparkline.js" />
+    <Content Include="AdminCSS\assets\images\custom-select.png" />
+    <Content Include="AdminCSS\assets\images\favicon.png" />
+    <Content Include="AdminCSS\assets\images\free-demo.jpg" />
+    <Content Include="AdminCSS\assets\images\logo-icon.png" />
+    <Content Include="AdminCSS\assets\images\logo-light-icon.png" />
+    <Content Include="AdminCSS\assets\images\logo-light-text.png" />
+    <Content Include="AdminCSS\assets\images\logo-text.png" />
+    <Content Include="AdminCSS\assets\images\log.png" />
+    <Content Include="AdminCSS\assets\images\nice-lite-lp-img.jpg" />
+    <Content Include="AdminCSS\assets\images\nice-pro-lp-img.jpg" />
+    <Content Include="AdminCSS\assets\images\pro-demo.jpg" />
+    <Content Include="AdminCSS\assets\images\users\1.jpg" />
+    <Content Include="AdminCSS\assets\images\users\2.jpg" />
+    <Content Include="AdminCSS\assets\images\users\4.jpg" />
+    <Content Include="AdminCSS\assets\images\users\5.jpg" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-grid.rtl.css" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-reboot.rtl.css" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-utilities.css" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-utilities.min.css" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-utilities.rtl.css" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap.rtl.css" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap.rtl.min.css" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\js\bootstrap.esm.js" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\js\bootstrap.esm.min.js" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="AdminCSS\assets\libs\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.css" />
+    <Content Include="AdminCSS\assets\libs\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.min.js" />
+    <Content Include="AdminCSS\assets\libs\chartist\dist\chartist.min.css" />
+    <Content Include="AdminCSS\assets\libs\chartist\dist\chartist.min.js" />
+    <Content Include="AdminCSS\assets\libs\jquery\dist\core.js" />
+    <Content Include="AdminCSS\assets\libs\jquery\dist\jquery.min.js" />
+    <Content Include="AdminCSS\assets\libs\jquery\dist\jquery.slim.min.js" />
+    <Content Include="AdminCSS\assets\libs\moment\ender.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\af.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ar-dz.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ar-kw.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ar-ly.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ar-ma.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ar-sa.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ar-tn.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ar.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\az.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\be.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\bg.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\bm.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\bn.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\bo.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\br.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\bs.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ca.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\cs.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\cv.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\cy.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\da.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\de-at.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\de-ch.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\de.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\dv.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\el.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\en-au.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\en-ca.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\en-gb.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\en-ie.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\en-il.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\en-nz.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\eo.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\es-do.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\es-us.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\es.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\et.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\eu.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\fa.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\fi.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\fo.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\fr-ca.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\fr-ch.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\fr.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\fy.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\gd.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\gl.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\gom-latn.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\gu.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\he.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\hi.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\hr.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\hu.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\hy-am.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\id.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\is.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\it.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ja.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\jv.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ka.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\kk.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\km.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\kn.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ko.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ky.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\lb.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\lo.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\lt.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\lv.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\me.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\mi.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\mk.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ml.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\mn.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\mr.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ms-my.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ms.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\mt.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\my.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\nb.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ne.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\nl-be.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\nl.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\nn.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\pa-in.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\pl.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\pt-br.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\pt.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ro.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ru.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\sd.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\se.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\si.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\sk.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\sl.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\sq.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\sr-cyrl.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\sr.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ss.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\sv.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\sw.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ta.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\te.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\tet.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\tg.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\th.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\tl-ph.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\tlh.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\tr.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\tzl.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\tzm-latn.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\tzm.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ug-cn.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\uk.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\ur.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\uz-latn.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\uz.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\vi.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\x-pseudo.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\yo.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\zh-cn.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\zh-hk.js" />
+    <Content Include="AdminCSS\assets\libs\moment\locale\zh-tw.js" />
+    <Content Include="AdminCSS\assets\libs\moment\min\locales.min.js" />
+    <Content Include="AdminCSS\assets\libs\moment\min\moment-with-locales.min.js" />
+    <Content Include="AdminCSS\assets\libs\moment\min\moment.min.js" />
+    <Content Include="AdminCSS\assets\libs\moment\moment.js" />
+    <Content Include="AdminCSS\assets\libs\moment\package.js" />
+    <Content Include="AdminCSS\assets\libs\popper.js\dist\esm\popper-utils.min.js" />
+    <Content Include="AdminCSS\assets\libs\popper.js\dist\esm\popper.min.js" />
+    <Content Include="AdminCSS\assets\libs\popper.js\dist\popper-utils.min.js" />
+    <Content Include="AdminCSS\assets\libs\popper.js\dist\popper.min.js" />
+    <Content Include="AdminCSS\assets\libs\popper.js\dist\umd\popper-utils.min.js" />
+    <Content Include="AdminCSS\assets\libs\popper.js\dist\umd\popper.min.js" />
+    <Content Include="AdminCSS\dist\css\icons\material-design-iconic-font\css\material-design-iconic-font.css" />
+    <Content Include="AdminCSS\dist\css\icons\material-design-iconic-font\css\material-design-iconic-font.min.css" />
+    <Content Include="AdminCSS\dist\css\icons\material-design-iconic-font\css\materialdesignicons.min.css" />
+    <Content Include="AdminCSS\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="AdminCSS\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="AdminCSS\dist\css\icons\themify-icons\fonts\themify.svg" />
+    <Content Include="AdminCSS\dist\css\icons\themify-icons\ie7\ie7.css" />
+    <Content Include="AdminCSS\dist\css\icons\themify-icons\ie7\ie7.js" />
+    <Content Include="AdminCSS\dist\css\icons\themify-icons\themify-icons.css" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\css\weather-icons-core.css" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\css\weather-icons-variables.css" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\css\weather-icons-wind.css" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\css\weather-icons-wind.min.css" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\css\weather-icons.css" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\css\weather-icons.min.css" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\css\variables-beaufort.css" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\css\variables-day.css" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\css\variables-direction.css" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\css\variables-misc.css" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\css\variables-moon.css" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\css\variables-neutral.css" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\css\variables-night.css" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\css\variables-time.css" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\css\variables-wind-names.css" />
+    <Content Include="AdminCSS\dist\css\style.css" />
+    <Content Include="AdminCSS\dist\css\style.min - Copy.css" />
+    <Content Include="AdminCSS\dist\css\style.min.css" />
+    <Content Include="AdminCSS\dist\js\custom.js" />
+    <Content Include="AdminCSS\dist\js\custom.min.js" />
+    <Content Include="AdminCSS\dist\js\pages\dashboards\dashboard1.js" />
+    <Content Include="AdminCSS\dist\js\sidebarmenu.js" />
+    <Content Include="AdminCSS\dist\js\waves.js" />
+    <Content Include="Content2\bootstrap1.min.css" />
+    <Content Include="Content2\style00.css" />
+    <Content Include="Content2\stylelh.css" />
+    <Content Include="Content2\themify-icons\demo-files\demo.css" />
+    <Content Include="Content2\themify-icons\fonts\themify.svg" />
+    <Content Include="Content2\themify-icons\ie7\ie7.css" />
+    <Content Include="Content2\themify-icons\ie7\ie7.js" />
+    <Content Include="Content2\themify-icons\index.html" />
+    <Content Include="Content2\themify-icons\readme.txt" />
+    <Content Include="Content2\themify-icons\SVG\agenda.svg" />
+    <Content Include="Content2\themify-icons\SVG\alarm-clock.svg" />
+    <Content Include="Content2\themify-icons\SVG\alert.svg" />
+    <Content Include="Content2\themify-icons\SVG\align-center.svg" />
+    <Content Include="Content2\themify-icons\SVG\align-justify.svg" />
+    <Content Include="Content2\themify-icons\SVG\align-left.svg" />
+    <Content Include="Content2\themify-icons\SVG\align-right.svg" />
+    <Content Include="Content2\themify-icons\SVG\anchor.svg" />
+    <Content Include="Content2\themify-icons\SVG\android.svg" />
+    <Content Include="Content2\themify-icons\SVG\angle-double-down.svg" />
+    <Content Include="Content2\themify-icons\SVG\angle-double-left.svg" />
+    <Content Include="Content2\themify-icons\SVG\angle-double-right.svg" />
+    <Content Include="Content2\themify-icons\SVG\angle-double-up.svg" />
+    <Content Include="Content2\themify-icons\SVG\angle-down.svg" />
+    <Content Include="Content2\themify-icons\SVG\angle-left.svg" />
+    <Content Include="Content2\themify-icons\SVG\angle-right.svg" />
+    <Content Include="Content2\themify-icons\SVG\angle-up.svg" />
+    <Content Include="Content2\themify-icons\SVG\announcement.svg" />
+    <Content Include="Content2\themify-icons\SVG\apple.svg" />
+    <Content Include="Content2\themify-icons\SVG\archive.svg" />
+    <Content Include="Content2\themify-icons\SVG\arrow-circle-down.svg" />
+    <Content Include="Content2\themify-icons\SVG\arrow-circle-left.svg" />
+    <Content Include="Content2\themify-icons\SVG\arrow-circle-right.svg" />
+    <Content Include="Content2\themify-icons\SVG\arrow-circle-up.svg" />
+    <Content Include="Content2\themify-icons\SVG\arrow-down.svg" />
+    <Content Include="Content2\themify-icons\SVG\arrow-left.svg" />
+    <Content Include="Content2\themify-icons\SVG\arrow-right.svg" />
+    <Content Include="Content2\themify-icons\SVG\arrow-top-left.svg" />
+    <Content Include="Content2\themify-icons\SVG\arrow-top-right.svg" />
+    <Content Include="Content2\themify-icons\SVG\arrow-up.svg" />
+    <Content Include="Content2\themify-icons\SVG\arrow.svg" />
+    <Content Include="Content2\themify-icons\SVG\arrows-corner.svg" />
+    <Content Include="Content2\themify-icons\SVG\arrows-horizontal.svg" />
+    <Content Include="Content2\themify-icons\SVG\arrows-vertical.svg" />
+    <Content Include="Content2\themify-icons\SVG\back-left.svg" />
+    <Content Include="Content2\themify-icons\SVG\back-right.svg" />
+    <Content Include="Content2\themify-icons\SVG\bag.svg" />
+    <Content Include="Content2\themify-icons\SVG\bar-chart-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\bar-chart.svg" />
+    <Content Include="Content2\themify-icons\SVG\basketball.svg" />
+    <Content Include="Content2\themify-icons\SVG\bell.svg" />
+    <Content Include="Content2\themify-icons\SVG\blackboard.svg" />
+    <Content Include="Content2\themify-icons\SVG\bolt-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\bolt.svg" />
+    <Content Include="Content2\themify-icons\SVG\book.svg" />
+    <Content Include="Content2\themify-icons\SVG\bookmark-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\bookmark.svg" />
+    <Content Include="Content2\themify-icons\SVG\briefcase.svg" />
+    <Content Include="Content2\themify-icons\SVG\brush-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\brush.svg" />
+    <Content Include="Content2\themify-icons\SVG\calendar.svg" />
+    <Content Include="Content2\themify-icons\SVG\camera.svg" />
+    <Content Include="Content2\themify-icons\SVG\car.svg" />
+    <Content Include="Content2\themify-icons\SVG\check-box.svg" />
+    <Content Include="Content2\themify-icons\SVG\check.svg" />
+    <Content Include="Content2\themify-icons\SVG\clip.svg" />
+    <Content Include="Content2\themify-icons\SVG\clipboard.svg" />
+    <Content Include="Content2\themify-icons\SVG\close.svg" />
+    <Content Include="Content2\themify-icons\SVG\cloud-down.svg" />
+    <Content Include="Content2\themify-icons\SVG\cloud-up.svg" />
+    <Content Include="Content2\themify-icons\SVG\cloud.svg" />
+    <Content Include="Content2\themify-icons\SVG\comment-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\comment.svg" />
+    <Content Include="Content2\themify-icons\SVG\comments-smiley.svg" />
+    <Content Include="Content2\themify-icons\SVG\comments.svg" />
+    <Content Include="Content2\themify-icons\SVG\control-backward.svg" />
+    <Content Include="Content2\themify-icons\SVG\control-eject.svg" />
+    <Content Include="Content2\themify-icons\SVG\control-forward.svg" />
+    <Content Include="Content2\themify-icons\SVG\control-pause.svg" />
+    <Content Include="Content2\themify-icons\SVG\control-play.svg" />
+    <Content Include="Content2\themify-icons\SVG\control-record.svg" />
+    <Content Include="Content2\themify-icons\SVG\control-shuffle.svg" />
+    <Content Include="Content2\themify-icons\SVG\control-skip-backward.svg" />
+    <Content Include="Content2\themify-icons\SVG\control-skip-forward.svg" />
+    <Content Include="Content2\themify-icons\SVG\control-stop.svg" />
+    <Content Include="Content2\themify-icons\SVG\credit-card.svg" />
+    <Content Include="Content2\themify-icons\SVG\crown.svg" />
+    <Content Include="Content2\themify-icons\SVG\css3.svg" />
+    <Content Include="Content2\themify-icons\SVG\cup.svg" />
+    <Content Include="Content2\themify-icons\SVG\cut.svg" />
+    <Content Include="Content2\themify-icons\SVG\dashboard.svg" />
+    <Content Include="Content2\themify-icons\SVG\desktop.svg" />
+    <Content Include="Content2\themify-icons\SVG\direction-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\direction.svg" />
+    <Content Include="Content2\themify-icons\SVG\download.svg" />
+    <Content Include="Content2\themify-icons\SVG\dribbble.svg" />
+    <Content Include="Content2\themify-icons\SVG\dropbox-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\dropbox.svg" />
+    <Content Include="Content2\themify-icons\SVG\drupal.svg" />
+    <Content Include="Content2\themify-icons\SVG\email.svg" />
+    <Content Include="Content2\themify-icons\SVG\envelope.svg" />
+    <Content Include="Content2\themify-icons\SVG\eraser.svg" />
+    <Content Include="Content2\themify-icons\SVG\exchange-vertical.svg" />
+    <Content Include="Content2\themify-icons\SVG\export.svg" />
+    <Content Include="Content2\themify-icons\SVG\eye.svg" />
+    <Content Include="Content2\themify-icons\SVG\face-sad.svg" />
+    <Content Include="Content2\themify-icons\SVG\face-smile.svg" />
+    <Content Include="Content2\themify-icons\SVG\facebook.svg" />
+    <Content Include="Content2\themify-icons\SVG\file.svg" />
+    <Content Include="Content2\themify-icons\SVG\files.svg" />
+    <Content Include="Content2\themify-icons\SVG\filter.svg" />
+    <Content Include="Content2\themify-icons\SVG\flag-alt-2.svg" />
+    <Content Include="Content2\themify-icons\SVG\flag-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\flag.svg" />
+    <Content Include="Content2\themify-icons\SVG\flickr-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\flickr.svg" />
+    <Content Include="Content2\themify-icons\SVG\folder.svg" />
+    <Content Include="Content2\themify-icons\SVG\fullscreen.svg" />
+    <Content Include="Content2\themify-icons\SVG\gallery.svg" />
+    <Content Include="Content2\themify-icons\SVG\game.svg" />
+    <Content Include="Content2\themify-icons\SVG\gift.svg" />
+    <Content Include="Content2\themify-icons\SVG\github.svg" />
+    <Content Include="Content2\themify-icons\SVG\google.svg" />
+    <Content Include="Content2\themify-icons\SVG\hand-drag.svg" />
+    <Content Include="Content2\themify-icons\SVG\hand-open.svg" />
+    <Content Include="Content2\themify-icons\SVG\hand-point-down.svg" />
+    <Content Include="Content2\themify-icons\SVG\hand-point-left.svg" />
+    <Content Include="Content2\themify-icons\SVG\hand-point-right.svg" />
+    <Content Include="Content2\themify-icons\SVG\hand-point-up.svg" />
+    <Content Include="Content2\themify-icons\SVG\hand-stop.svg" />
+    <Content Include="Content2\themify-icons\SVG\harddrive.svg" />
+    <Content Include="Content2\themify-icons\SVG\harddrives.svg" />
+    <Content Include="Content2\themify-icons\SVG\headphone-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\headphone.svg" />
+    <Content Include="Content2\themify-icons\SVG\heart-broken.svg" />
+    <Content Include="Content2\themify-icons\SVG\heart.svg" />
+    <Content Include="Content2\themify-icons\SVG\help-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\help.svg" />
+    <Content Include="Content2\themify-icons\SVG\home.svg" />
+    <Content Include="Content2\themify-icons\SVG\html5.svg" />
+    <Content Include="Content2\themify-icons\SVG\hummer.svg" />
+    <Content Include="Content2\themify-icons\SVG\id-badge.svg" />
+    <Content Include="Content2\themify-icons\SVG\image.svg" />
+    <Content Include="Content2\themify-icons\SVG\import.svg" />
+    <Content Include="Content2\themify-icons\SVG\infinite.svg" />
+    <Content Include="Content2\themify-icons\SVG\info-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\info.svg" />
+    <Content Include="Content2\themify-icons\SVG\ink-pen.svg" />
+    <Content Include="Content2\themify-icons\SVG\instagram.svg" />
+    <Content Include="Content2\themify-icons\SVG\Italic.svg" />
+    <Content Include="Content2\themify-icons\SVG\joomla.svg" />
+    <Content Include="Content2\themify-icons\SVG\jsfiddle.svg" />
+    <Content Include="Content2\themify-icons\SVG\key.svg" />
+    <Content Include="Content2\themify-icons\SVG\layers-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\layers.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-accordion-list.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-accordion-merged.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-accordion-separated.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-column2-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-column2.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-column3-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-column3.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-column4-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-column4.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-cta-btn-left.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-cta-btn-right.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-cta-center.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-cta-left.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-cta-right.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-grid2-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-grid2-thumb.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-grid2.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-grid3-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-grid3.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-grid4-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-grid4.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-line-solid.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-list-large-image.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-list-post.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-list-thumb-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-list-thumb.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-media-center-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-media-center.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-media-left-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-media-left.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-media-overlay-alt-2.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-media-overlay-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-media-overlay.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-media-right-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-media-right.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-menu-full.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-menu-separated.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-menu-v.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-menu.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-placeholder.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-sidebar-2.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-sidebar-left.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-sidebar-none.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-sidebar-right.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-slider-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-slider.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-tab-min.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-tab-v.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-tab-window.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-tab.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-width-default-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-width-default.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout-width-full.svg" />
+    <Content Include="Content2\themify-icons\SVG\layout.svg" />
+    <Content Include="Content2\themify-icons\SVG\light-bulb.svg" />
+    <Content Include="Content2\themify-icons\SVG\line-dashed.svg" />
+    <Content Include="Content2\themify-icons\SVG\line-dotted.svg" />
+    <Content Include="Content2\themify-icons\SVG\line-double.svg" />
+    <Content Include="Content2\themify-icons\SVG\link.svg" />
+    <Content Include="Content2\themify-icons\SVG\linkedin.svg" />
+    <Content Include="Content2\themify-icons\SVG\linux.svg" />
+    <Content Include="Content2\themify-icons\SVG\list-ol.svg" />
+    <Content Include="Content2\themify-icons\SVG\list.svg" />
+    <Content Include="Content2\themify-icons\SVG\location-arrow.svg" />
+    <Content Include="Content2\themify-icons\SVG\location-pin.svg" />
+    <Content Include="Content2\themify-icons\SVG\lock.svg" />
+    <Content Include="Content2\themify-icons\SVG\loop.svg" />
+    <Content Include="Content2\themify-icons\SVG\magnet.svg" />
+    <Content Include="Content2\themify-icons\SVG\map-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\map.svg" />
+    <Content Include="Content2\themify-icons\SVG\marker-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\marker.svg" />
+    <Content Include="Content2\themify-icons\SVG\medall-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\medall.svg" />
+    <Content Include="Content2\themify-icons\SVG\menu-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\menu.svg" />
+    <Content Include="Content2\themify-icons\SVG\microphone-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\microphone.svg" />
+    <Content Include="Content2\themify-icons\SVG\microsoft-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\microsoft.svg" />
+    <Content Include="Content2\themify-icons\SVG\minus.svg" />
+    <Content Include="Content2\themify-icons\SVG\mobile.svg" />
+    <Content Include="Content2\themify-icons\SVG\money.svg" />
+    <Content Include="Content2\themify-icons\SVG\more-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\more.svg" />
+    <Content Include="Content2\themify-icons\SVG\mouse-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\mouse.svg" />
+    <Content Include="Content2\themify-icons\SVG\music-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\music.svg" />
+    <Content Include="Content2\themify-icons\SVG\na.svg" />
+    <Content Include="Content2\themify-icons\SVG\new-window.svg" />
+    <Content Include="Content2\themify-icons\SVG\notepad.svg" />
+    <Content Include="Content2\themify-icons\SVG\package.svg" />
+    <Content Include="Content2\themify-icons\SVG\paint-bucket.svg" />
+    <Content Include="Content2\themify-icons\SVG\paint-roller.svg" />
+    <Content Include="Content2\themify-icons\SVG\palette.svg" />
+    <Content Include="Content2\themify-icons\SVG\panel.svg" />
+    <Content Include="Content2\themify-icons\SVG\paragraph.svg" />
+    <Content Include="Content2\themify-icons\SVG\pencil-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\pencil-alt2.svg" />
+    <Content Include="Content2\themify-icons\SVG\pencil.svg" />
+    <Content Include="Content2\themify-icons\SVG\pie-chart.svg" />
+    <Content Include="Content2\themify-icons\SVG\pin-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\pin.svg" />
+    <Content Include="Content2\themify-icons\SVG\pin2.svg" />
+    <Content Include="Content2\themify-icons\SVG\pinterest-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\pinterest.svg" />
+    <Content Include="Content2\themify-icons\SVG\plug.svg" />
+    <Content Include="Content2\themify-icons\SVG\plus.svg" />
+    <Content Include="Content2\themify-icons\SVG\power-off.svg" />
+    <Content Include="Content2\themify-icons\SVG\printer.svg" />
+    <Content Include="Content2\themify-icons\SVG\pulse.svg" />
+    <Content Include="Content2\themify-icons\SVG\quote-left.svg" />
+    <Content Include="Content2\themify-icons\SVG\quote-right.svg" />
+    <Content Include="Content2\themify-icons\SVG\receipt.svg" />
+    <Content Include="Content2\themify-icons\SVG\reddit.svg" />
+    <Content Include="Content2\themify-icons\SVG\reload.svg" />
+    <Content Include="Content2\themify-icons\SVG\rocket.svg" />
+    <Content Include="Content2\themify-icons\SVG\rss-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\rss.svg" />
+    <Content Include="Content2\themify-icons\SVG\ruler-alt-2.svg" />
+    <Content Include="Content2\themify-icons\SVG\ruler-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\ruler-pencil.svg" />
+    <Content Include="Content2\themify-icons\SVG\ruler.svg" />
+    <Content Include="Content2\themify-icons\SVG\save-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\save.svg" />
+    <Content Include="Content2\themify-icons\SVG\search.svg" />
+    <Content Include="Content2\themify-icons\SVG\server.svg" />
+    <Content Include="Content2\themify-icons\SVG\settings.svg" />
+    <Content Include="Content2\themify-icons\SVG\share-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\share.svg" />
+    <Content Include="Content2\themify-icons\SVG\sharethis-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\sharethis.svg" />
+    <Content Include="Content2\themify-icons\SVG\shield.svg" />
+    <Content Include="Content2\themify-icons\SVG\shift-left-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\shift-left.svg" />
+    <Content Include="Content2\themify-icons\SVG\shift-right-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\shift-right.svg" />
+    <Content Include="Content2\themify-icons\SVG\shine.svg" />
+    <Content Include="Content2\themify-icons\SVG\shopping-cart-full.svg" />
+    <Content Include="Content2\themify-icons\SVG\shopping-cart.svg" />
+    <Content Include="Content2\themify-icons\SVG\shortcode.svg" />
+    <Content Include="Content2\themify-icons\SVG\signal.svg" />
+    <Content Include="Content2\themify-icons\SVG\skype.svg" />
+    <Content Include="Content2\themify-icons\SVG\slice.svg" />
+    <Content Include="Content2\themify-icons\SVG\smallcap.svg" />
+    <Content Include="Content2\themify-icons\SVG\soundcloud.svg" />
+    <Content Include="Content2\themify-icons\SVG\split-h.svg" />
+    <Content Include="Content2\themify-icons\SVG\split-v-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\split-v.svg" />
+    <Content Include="Content2\themify-icons\SVG\spray.svg" />
+    <Content Include="Content2\themify-icons\SVG\stack-overflow.svg" />
+    <Content Include="Content2\themify-icons\SVG\stamp.svg" />
+    <Content Include="Content2\themify-icons\SVG\star.svg" />
+    <Content Include="Content2\themify-icons\SVG\stats-down.svg" />
+    <Content Include="Content2\themify-icons\SVG\stats-up.svg" />
+    <Content Include="Content2\themify-icons\SVG\support.svg" />
+    <Content Include="Content2\themify-icons\SVG\tablet.svg" />
+    <Content Include="Content2\themify-icons\SVG\tag.svg" />
+    <Content Include="Content2\themify-icons\SVG\target.svg" />
+    <Content Include="Content2\themify-icons\SVG\text.svg" />
+    <Content Include="Content2\themify-icons\SVG\themify-favicon-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\themify-favicon.svg" />
+    <Content Include="Content2\themify-icons\SVG\themify-logo.svg" />
+    <Content Include="Content2\themify-icons\SVG\thought.svg" />
+    <Content Include="Content2\themify-icons\SVG\thumb-down.svg" />
+    <Content Include="Content2\themify-icons\SVG\thumb-up.svg" />
+    <Content Include="Content2\themify-icons\SVG\ticket.svg" />
+    <Content Include="Content2\themify-icons\SVG\time.svg" />
+    <Content Include="Content2\themify-icons\SVG\timer.svg" />
+    <Content Include="Content2\themify-icons\SVG\trash.svg" />
+    <Content Include="Content2\themify-icons\SVG\trello.svg" />
+    <Content Include="Content2\themify-icons\SVG\truck.svg" />
+    <Content Include="Content2\themify-icons\SVG\tumblr-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\tumblr.svg" />
+    <Content Include="Content2\themify-icons\SVG\twitter-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\twitter.svg" />
+    <Content Include="Content2\themify-icons\SVG\underline.svg" />
+    <Content Include="Content2\themify-icons\SVG\unlink.svg" />
+    <Content Include="Content2\themify-icons\SVG\unlock.svg" />
+    <Content Include="Content2\themify-icons\SVG\upload.svg" />
+    <Content Include="Content2\themify-icons\SVG\uppercase.svg" />
+    <Content Include="Content2\themify-icons\SVG\user.svg" />
+    <Content Include="Content2\themify-icons\SVG\vector.svg" />
+    <Content Include="Content2\themify-icons\SVG\video-camera.svg" />
+    <Content Include="Content2\themify-icons\SVG\video-clapper.svg" />
+    <Content Include="Content2\themify-icons\SVG\view-grid.svg" />
+    <Content Include="Content2\themify-icons\SVG\view-list-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\view-list.svg" />
+    <Content Include="Content2\themify-icons\SVG\vimeo-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\vimeo.svg" />
+    <Content Include="Content2\themify-icons\SVG\volume.svg" />
+    <Content Include="Content2\themify-icons\SVG\wallet.svg" />
+    <Content Include="Content2\themify-icons\SVG\wand.svg" />
+    <Content Include="Content2\themify-icons\SVG\wheelchair.svg" />
+    <Content Include="Content2\themify-icons\SVG\widget-alt.svg" />
+    <Content Include="Content2\themify-icons\SVG\widget.svg" />
+    <Content Include="Content2\themify-icons\SVG\widgetized.svg" />
+    <Content Include="Content2\themify-icons\SVG\window.svg" />
+    <Content Include="Content2\themify-icons\SVG\wordpress.svg" />
+    <Content Include="Content2\themify-icons\SVG\world.svg" />
+    <Content Include="Content2\themify-icons\SVG\write.svg" />
+    <Content Include="Content2\themify-icons\SVG\yahoo.svg" />
+    <Content Include="Content2\themify-icons\SVG\youtube.svg" />
+    <Content Include="Content2\themify-icons\SVG\zip.svg" />
+    <Content Include="Content2\themify-icons\SVG\zoom-in.svg" />
+    <Content Include="Content2\themify-icons\SVG\zoom-out.svg" />
+    <Content Include="Content2\themify-icons\themify-icons.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\colors.css" />
+    <Content Include="Content\grid.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\queries.css" />
+    <Content Include="Content\styles.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Image\activities1.jpg" />
+    <Content Include="Image\activities2.jpg" />
+    <Content Include="Image\activities3.jpg" />
+    <Content Include="Image\activities4.jpg" />
+    <Content Include="Image\background.jpg" />
+    <Content Include="Image\background2.jpg" />
+    <Content Include="Image\background4.jpg" />
+    <Content Include="Image\công-đoàn-bộ-y-tế--11976434216667810.jpg" />
+    <Content Include="Image\công-đoàn-y-tế-vn--11976534906991738.jpg" />
+    <Content Include="Image\danhba-4792d3--1319161877044500.jpg" />
+    <Content Include="Image\donate.jpg" />
+    <Content Include="Image\hcm-4792d3--1319265100359100.png" />
+    <Content Include="Image\hienmaucuunguoi.jpg" />
+    <Content Include="Image\index.png" />
+    <Content Include="Image\voinguoidan-4792d3--1319023538321200.jpg" />
+    <Content Include="resources\css\colors.css" />
+    <Content Include="resources\css\queries.css" />
+    <Content Include="resources\css\styles.css" />
+    <Content Include="Image\android-chrome-192x192.png" />
+    <Content Include="Image\android-chrome-512x512.png" />
+    <Content Include="Image\apple-touch-icon.png" />
+    <Content Include="Image\browserconfig.xml" />
+    <Content Include="Image\favicon-16x16.png" />
+    <Content Include="Image\favicon-32x32.png" />
+    <Content Include="Image\favicon.ico" />
+    <Content Include="Image\mstile-150x150.png" />
+    <Content Include="Image\safari-pinned-tab.svg" />
+    <Content Include="Image\activities1.jpeg" />
+    <Content Include="Image\activities2.jpeg" />
+    <Content Include="Image\activities3.jpeg" />
+    <Content Include="Image\activities4.jpeg" />
+    <Content Include="Image\background1.jpeg" />
+    <Content Include="Image\background3.jpeg" />
+    <Content Include="Image\background5.jpeg" />
+    <Content Include="Image\barcelona_logo.png" />
+    <Content Include="Image\bayern_logo.png" />
+    <Content Include="Image\juventus_logo.png" />
+    <Content Include="Image\logo.png" />
+    <Content Include="Image\mctcity_logo.png" />
+    <Content Include="Image\mctunited_logo.png" />
+    <Content Include="Image\person1.jpeg" />
+    <Content Include="Image\person2.jpeg" />
+    <Content Include="Image\person3.jpeg" />
+    <Content Include="Image\person4.jpeg" />
+    <Content Include="Image\person5.jpeg" />
+    <Content Include="Image\person6.jpg" />
+    <Content Include="Image\real_logo.png" />
+    <Content Include="Image\tottenham_logo.png" />
+    <Content Include="resources\js\scripts.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Image\site.webmanifest" />
+    <Content Include="AdminCSS\assets\.DS_Store" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\.DS_Store" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-utilities.css.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap.rtl.css.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\js\bootstrap.esm.js.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\js\bootstrap.esm.min.js.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="AdminCSS\assets\libs\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="AdminCSS\assets\libs\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.min.js.map" />
+    <Content Include="AdminCSS\assets\libs\chartist\dist\chartist.min.js.map" />
+    <Content Include="AdminCSS\assets\libs\popper.js\dist\umd\popper.min.js.map" />
+    <Content Include="AdminCSS\dist\.DS_Store" />
+    <Content Include="AdminCSS\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="AdminCSS\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="AdminCSS\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="AdminCSS\dist\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="AdminCSS\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="AdminCSS\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="AdminCSS\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="AdminCSS\dist\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="AdminCSS\dist\css\icons\themify-icons\fonts\themify.eot" />
+    <Content Include="AdminCSS\dist\css\icons\themify-icons\fonts\themify.ttf" />
+    <Content Include="AdminCSS\dist\css\icons\themify-icons\fonts\themify.woff" />
+    <Content Include="AdminCSS\dist\css\icons\themify-icons\themify-icons.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.eot" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.woff" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\fonts\weathericons-regular-webfont.woff2" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-classes\classes-beaufort.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-classes\classes-day.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-classes\classes-direction.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-classes\classes-misc.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-classes\classes-moon-aliases.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-classes\classes-moon.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-classes\classes-neutral.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-classes\classes-night.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-classes\classes-time.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-classes\classes-wind-aliases.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-classes\classes-wind-degrees.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-classes\classes-wind.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-variables\variables-beaufort.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-variables\variables-day.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-variables\variables-direction.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-variables\variables-misc.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-variables\variables-moon.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-variables\variables-neutral.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-variables\variables-night.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-variables\variables-time.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\icon-variables\variables-wind-names.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\mappings\wi-forecast-io.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\mappings\wi-owm.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\mappings\wi-wmo4680.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\mappings\wi-yahoo.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\weather-icons-classes.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\weather-icons-core.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\weather-icons-variables.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\weather-icons-wind.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\weather-icons-wind.min.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\weather-icons.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\less\weather-icons.min.less" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-classes\classes-beaufort.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-classes\classes-day.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-classes\classes-direction.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-classes\classes-misc.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-classes\classes-moon-aliases.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-classes\classes-moon.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-classes\classes-neutral.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-classes\classes-night.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-classes\classes-time.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-classes\classes-wind-aliases.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-classes\classes-wind-degrees.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-classes\classes-wind.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-variables\variables-beaufort.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-variables\variables-day.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-variables\variables-direction.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-variables\variables-misc.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-variables\variables-moon.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-variables\variables-neutral.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-variables\variables-night.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-variables\variables-time.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\icon-variables\variables-wind-names.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\mappings\wi-forecast-io.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\mappings\wi-owm.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\mappings\wi-wmo4680.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\mappings\wi-yahoo.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\weather-icons-classes.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\weather-icons-core.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\weather-icons-variables.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\weather-icons-wind.min.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\weather-icons-wind.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\weather-icons.min.scss" />
+    <Content Include="AdminCSS\dist\css\icons\weather-icons\sass\weather-icons.scss" />
+    <Content Include="Content2\themify-icons\fonts\themify.eot" />
+    <Content Include="Content2\themify-icons\fonts\themify.ttf" />
+    <Content Include="Content2\themify-icons\fonts\themify.woff" />
+    <Content Include="Content2\themify-icons\Themify IconFonts 5-23-2014.json" />
+    <Content Include="Models\dbQLHM.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbQLHM.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Models\dbQLHM.dbml.layout">
+      <DependentUpon>dbQLHM.dbml</DependentUpon>
+    </None>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.waypoints.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\scripts.js" />
+    <Content Include="vendors\css\grid.css" />
+    <Content Include="vendors\js\jquery.waypoints.min.js" />
+    <Content Include="Views\Shared\index.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutHienMau.cshtml" />
+    <Content Include="Views\HienMau\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutUser.cshtml" />
+    <Content Include="Views\User\DangKy.cshtml" />
+    <Content Include="Views\User\Dangnhap.cshtml" />
+    <Content Include="Views\User\TTTK.cshtml" />
+    <Content Include="Views\Shared\_LayoutHienMau2.cshtml" />
+    <Content Include="Views\HienMau\Index2.cshtml" />
+    <Content Include="Views\User\Quenmatkhau.cshtml" />
+    <Content Include="Views\Shared\_LayoutDatLich.cshtml" />
+    <Content Include="Views\DatLich\Datlich.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\TKAD\Index.cshtml" />
+    <Content Include="Views\TKAD\Details.cshtml" />
+    <Content Include="Views\TKAD\create.cshtml" />
+    <Content Include="Views\TKAD\Edit.cshtml" />
+    <Content Include="Views\TKAD\Delete.cshtml" />
+    <Content Include="Views\QLND\Index.cshtml" />
+    <Content Include="Views\QLND\Details.cshtml" />
+    <Content Include="Views\QLND\create.cshtml" />
+    <Content Include="Views\QLND\Edit.cshtml" />
+    <Content Include="Views\QLND\Delete.cshtml" />
+    <Content Include="Views\QLDatLich\Index.cshtml" />
+    <Content Include="Views\QLDatLich\Edit.cshtml" />
+    <Content Include="Views\QLDatLich\Delete.cshtml" />
+    <Content Include="Views\QLDatLich\Details.cshtml" />
+    <Content Include="Views\QLDotHien\Index.cshtml" />
+    <Content Include="Views\QLDotHien\Edit.cshtml" />
+    <Content Include="Views\QLDotHien\Details.cshtml" />
+    <Content Include="Views\QLDotHien\Delete.cshtml" />
+    <Content Include="Views\QLDotHien\create.cshtml" />
+    <Content Include="Views\TTSK\Index.cshtml" />
+    <Content Include="Views\TTSK\create.cshtml" />
+    <Content Include="Views\TTSK\Edit.cshtml" />
+    <Content Include="Views\TTSK\Details.cshtml" />
+    <Content Include="Views\TTSK\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="resources\favicons\" />
+    <Folder Include="resources\img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56338</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44313/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

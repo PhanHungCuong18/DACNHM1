@@ -1,0 +1,65 @@
+﻿@model DACNHM.Models.DotToChuc
+
+@{
+    ViewBag.Title = "create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Thêm 1 lần tổ chức </h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="form-group">
+    <b>Địa điểm tổ chức</b>
+    @* @Html.LabelFor(model => model.MaDiaDiem, htmlAttributes: new { @class = "control-label col-md-2" }) *@
+<div class="col-md-10">
+    @Html.DropDownList("MaDiaDiem")
+    @*@Html.EditorFor(model => model.MaDiaDiem, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.MaDiaDiem, "", new { @class = "text-danger" })*@
+</div>
+</div>
+
+<div class="form-group">
+    <b>Đơn vị quản lý </b>
+    @* @Html.LabelFor(model => model.MaDonViQL, htmlAttributes: new { @class = "control-label col-md-2" }) *@
+<div class="col-md-10">
+    @Html.DropDownList("MaDonViQL")
+    @*@Html.EditorFor(model => model.MaDonViQL, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.MaDonViQL, "", new { @class = "text-danger" })*@
+</div>
+</div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Ca, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Ca, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Ca, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b>Ngày tổ chức </b>
+        @* @Html.LabelFor(model => model.NgayToChuc, htmlAttributes: new { @class = "control-label col-md-2" }) *@
+    <div class="col-md-10">
+        
+        @Html.EditorFor(model => model.NgayToChuc, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.NgayToChuc, "", new { @class = "text-danger" })
+    </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <a href="@Url.Action("Index","QLDotHien")" style="background-color: #dc3545; border-radius: 15px" class="btn btn-default">Quay trở lại</a>
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+

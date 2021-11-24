@@ -1,0 +1,84 @@
+﻿@model DACNHM.Models.NguoiHienMau
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dd>
+            &emsp;<b>Họ tên: </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            @Html.DisplayFor(model => model.TenNgHien)
+        </dd>
+        <dd>
+            &emsp;<b>CCCD: </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            @Html.DisplayFor(model => model.SoCCCD)
+        </dd>
+
+
+        <dd>
+            &emsp;<b>Tài khoản:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.TaiKhoan)
+        </dd>
+
+
+
+        <dd>
+            &emsp;<b>Mật khẩu:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.MatKhau)
+        </dd>
+
+
+        <dd>
+            &emsp;<b>Email:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+
+
+        <dd>
+            &emsp;<b>Địa chỉ:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+
+
+        <dd>
+            &emsp;<b>Điện thoại:</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.Sdt)
+        </dd>
+
+
+
+        <dd>
+            &emsp;<b>Ngày sinh:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @String.Format("{0:dd/MM/yyyy}", Model.NgaySinh)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    &emsp;<a href="@Url.Action("Edit","QLND", new {id = Model.MaNgHien })" style="background-color:#00266f; border-radius:15px" class="btn btn-default">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="@Url.Action("Index","QLND")" style="background-color: #dc3545; border-radius: 15px" class="btn btn-default">Quay trở lại</a>
+
+</p>
+<style>
+    dt {
+        margin: 0 50px;
+    }
+
+    dd {
+        margin: 0 50px;
+    }
+
+    p {
+        margin: 0 50px;
+    }
+</style>

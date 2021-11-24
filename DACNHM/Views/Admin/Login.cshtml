@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+@using (Html.BeginForm())
+{@Html.ValidationSummary(true)
+
+<body>
+    <div id="login">
+        <h3 class="text-center text-white pt-5">ĐĂNG NHẬP QUẢN TRỊ WEBSITE</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+
+                        <form id="login-form" class="form" action="" method="post">
+                            <br />
+                            <h3 class="text-center text-info">Login</h3>
+                            <br />
+                            <br />
+                            <br />
+                            <div class="form-group">
+                                <label for="username" class="text-info">Username:</label><br>
+                                <input type="text" name="txtusername" id="username" class="form-control" placeholder="Tên đăng nhập...">
+                                @ViewData["Loi1"]
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <label for="password" class="text-info">Password:</label><br>
+                                <input type="password" name="txtpassadmin" id="password" class="form-control" placeholder="Mật Khẩu...">
+                                @ViewData["Loi2"]
+                            </div>
+                            <br />
+                            <div class="form-group">
+
+                                <button type="submit" class="btn btn-info btn-md">Login</button>
+                                <br />
+                                <h6 style="color:red;font-family:'Times New Roman';font-style:italic">@ViewBag.Thongbao</h6>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: linear-gradient( 45deg,#eeefff -90%,rgba(45,95,93,.85)),url(../Image/donate.jpg);
+        height: 100px;
+    }
+
+    #login .container #login-row #login-column #login-box {
+        margin-top: 120px;
+        max-width: 600px;
+        height: 320px;
+        border: 1px solid #9C9C9C;
+        background-color: #EAEAEA;
+    }
+
+        #login .container #login-row #login-column #login-box #login-form {
+            padding: 20px;
+        }
+
+            #login .container #login-row #login-column #login-box #login-form #register-link {
+                margin-top: -85px;
+            }
+</style>

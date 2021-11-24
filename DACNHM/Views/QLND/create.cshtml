@@ -1,0 +1,72 @@
+﻿@model DACNHM.Models.NguoiHienMau
+
+@{
+    ViewBag.Title = "create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card card-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <form class="form-horizontal mt-4">
+                <div class="form-group">
+                    <b>Họ Tên:</b>
+                    @Html.EditorFor(model => model.TenNgHien, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TenNgHien, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <b>CCCD:</b>
+                    @Html.EditorFor(model => model.SoCCCD, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SoCCCD, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+
+                    <b>Tài khoản:</b>
+                    @Html.EditorFor(model => model.TaiKhoan, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TaiKhoan, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <b>Mật khẩu:</b>
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <b>Email:</b>
+                    @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <b>Địa chỉ:</b>
+                    @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <b>Điện thoại:</b>
+                    @Html.EditorFor(model => model.Sdt, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Sdt, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <b>Ngày sinh:</b>
+                    @Html.EditorFor(model => model.NgaySinh, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <a href="@Url.Action("Index","QLND")" style="background-color: #dc3545; border-radius: 15px" class="btn btn-default">Quay trở lại</a>
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </form>
+            }
+
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,314 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HHH</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Image/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Image/favicon-16x16.png">
+    <link rel="manifest" href="~/Image/site.webmanifest">
+    <link rel="mask-icon" href="~/Image/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="~/Image/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="~/Image/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/grid.css">
+
+    <link rel="stylesheet" type="text/css" href="~/Content/styles.css" />
+    <link rel="stylesheet" href="~/Content/queries.css">
+</head>
+
+<body>
+    <header id="home">
+        <nav>
+            <a href="#home"><img class="logo" src="~/Image/logo.png" alt="logo"></a>
+            <ul class="main-nav">
+                <!-- unordered list -->
+                <!-- list item -->
+                <li><a href="#about">GIỚI THIỆU</a></li>
+                <li><a href="#products">ĐƠN VỊ MÁU</a></li>
+                <li><a href="#sponsors">TIN TỨC</a></li>
+                <li><a href="#about">TRA CỨU</a></li>
+                <li><a href="#contact">LIÊN HỆ</a></li>
+                <li><a href="@Url.Action("DangKy","User") ">ĐĂNG KÝ</a></li>
+                <li><a href="@Url.Action("Dangnhap","User")">ĐĂNG NHẬP</a></li>
+
+            </ul>
+           
+            <i class="fas fa-bars mobile-nav-icon"></i>
+        </nav>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="heading-main-box">
+                <h1>
+                    Một giọt máu cho đi <br> Một cuộc đời ở lại<br>
+                    
+                </h1>
+                <a href="#about" class="btn">Về chúng tôi</a>
+                <a href="#products" class="btn">Đặt lịch ngay</a>
+            </div>
+        </div>
+    </header>
+    <section class="about-section" id="about">
+        <div class="row">
+            <h2>Về chúng tôi</h2>
+            <p class="p-long">
+                Hiến máu cứu người, một nghĩa cử cao đẹp thể hiện truyền thống tương thân thương ái, thương người như thể thương thân của dân tộc ta, là hành động giúp đỡ những người bệnh đang cần những giọt máu quý giá để duy trì sự sống. Vậy nên hãy để chúng tôi giúp bạn thực hiện điều đó một cách dễ dàng.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col span-1-of-4 about-picture">
+                <img src="~/Image/activities1.jpg" alt="activities1">
+                <p class="picture-title">
+                    Công tác vận động lễ hội
+                </p>
+            </div>
+            <div class="col span-1-of-4 about-picture">
+                <img src="~/Image/activities2.jpg" alt="activities2">
+                <p class="picture-title">
+                    Tinh thần tình nguyện
+                </p>
+            </div>
+            <div class="col span-1-of-4 about-picture">
+                <img src="~/Image/activities3.jpg" alt="activities3">
+                <p class="picture-title">
+                    Khen thưởng
+                </p>
+            </div>
+            <div class="col span-1-of-4 about-picture">
+                <img src="~/Image/activities4.jpg" alt="activities4">
+                <p class="picture-title">
+                    Chương trình ý nghĩa
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="products-section" id="products">
+        <h2>Đơn vị máu</h2>
+        <div class="row">
+            <div class="col span-1-of-3">
+                <div class="product-box">
+                    <h3>Mức 1</h3>
+                    <p class="product-price">250cc</p>
+                    <ul>
+                        <li><i class="fas fa-check small-icon"></i>Tiền mặt.</li>
+                        <li><i class="fas fa-check small-icon"></i>Tư vấn khôi phục</li>
+                        <li><i class="fas fa-check small-icon"></i>Giấy chứng nhận hiến máu.</li>
+                    </ul>
+                    
+                        @if (Session["TaiKhoan"] == null)
+                        {
+
+                            <a href="@Url.Action("Dangnhap","User")" class="btn">Đặt lịch</a>
+
+                        }
+                        else
+                        {
+                <a href="@Url.Action("Datlich","DatLich", new {id=  Session["id"] })" class="btn">Đặt lịch</a>
+                        }
+                  
+                </div>
+            </div>
+            <div class="col span-1-of-3">
+                <div class="product-box">
+                    <h3>Mức 2</h3>
+                    <p class="product-price">350cc</p>
+                    <ul>
+                        <li><i class="fas fa-check small-icon"></i>Tiền mặt.</li>
+                        <li><i class="fas fa-check small-icon"></i>Thực phẩm bổ sung.</li>
+                        <li><i class="fas fa-check small-icon"></i>Giấy chứng nhận hiến máu.</li>
+                    </ul>
+                    @if (Session["TaiKhoan"] == null)
+                    {
+
+                        <a href="@Url.Action("Dangnhap","User")" class="btn">Đặt lịch</a>
+
+                    }
+                    else
+                    {
+                <a href="@Url.Action("Datlich","DatLich", new {id=  Session["id"] })" class="btn">Đặt lịch</a>
+                    }
+                </div>
+            </div>
+            <div class="col span-1-of-3">
+                <div class="product-box">
+                    <h3>Mức 3</h3>
+                    <p class="product-price">450cc</p>
+                    <ul>
+                        <li><i class="fas fa-check small-icon"></i>Tiền mặt.</li>
+                        <li><i class="fas fa-check small-icon"></i>Dược phẩm bổ sung.</li>
+                        <li><i class="fas fa-check small-icon"></i>Giấy chứng nhận hiến máu.</li>
+                    </ul>
+                    @if (Session["TaiKhoan"] == null)
+                    {
+
+                        <a href="@Url.Action("Dangnhap","User")" class="btn">Đặt lịch</a>
+
+                    }
+                    else
+                    {
+                <a href="@Url.Action("Datlich","DatLich", new {id=  Session["id"] })" class="btn">Đặt lịch</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonials-section" id="testimonials">
+        <h2>Ý KIẾN</h2>
+        <div class="row">
+            <div class="col span-1-of-3">
+                <blockquote>
+                    Cảm ơn vì đã giúp tôi đăng ký hiến máu dễ dàng hơn rất nhiều so với trước đây. Hiến máu thật sự rất ý nghĩa ! Mọi người nên thử dù là chỉ là 1 lần.
+                    <cite>
+                        <img src="~/Image/person1.jpeg" alt="person1"> Nguyễn Kim Anh
+                    </cite>
+                </blockquote>
+            </div>
+            <div class="col span-1-of-3">
+                <blockquote>
+                   Tôi tin rằng những ai đã và chưa hiến máu sau khi vào đây sẽ đăng ký hiến máu ngay. Cảm ơn vì đã tạo ra 1 trang web tiện lợi cho việc hiến máu.
+                    <cite>
+                        <img src="~/Image/person2.jpeg" alt="person1"> Trần Võ Văn
+                    </cite>
+                </blockquote>
+            </div>
+            <div class="col span-1-of-3">
+                <blockquote>
+                    Hãy tin tôi. Hiến máu thật sự có lợi cho sức khỏe của chúng ta và cho cả người khác nữa. Vậy nên hãy hiến máu nhé trang web này sẽ giúp mọi người!
+                    <cite>
+                        <img src="~/Image/person3.jpeg" alt="person1" /> Lê Minh Vũ
+                    </cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+    <section class="sponsors-section" id="sponsors">
+        <h2>Tin tức</h2>
+        <div class="row">
+            <ul class="sponsors-showcase clearfix">
+                <li>
+                    <figure>
+                        <img class="logo-sponsor" src="~/Image/danhba-4792d3--1319161877044500.jpg" alt="barcelona">
+                        <figcaption>
+                          
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img class="logo-sponsor" src="~/Image/voinguoidan-4792d3--1319023538321200.jpg" alt="manchester city">
+                        <figcaption>
+                            
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img class="logo-sponsor" src="~/Image/hcm-4792d3--1319265100359100.png" alt="tottenham hotspur">
+                        <figcaption>
+                            
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+            <ul class="sponsors-showcase clearfix">
+                <li>
+                    <figure>
+                        <img class="logo-sponsor" src="~/Image/công-đoàn-bộ-y-tế--11976434216667810.jpg" alt="tottenham hotspur">
+                        <figcaption>
+
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img class="logo-sponsor" src="~/Image/hienmaucuunguoi.jpg" alt="Juventus">
+                        <figcaption>
+
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img class="logo-sponsor" src="~/Image/công-đoàn-y-tế-vn--11976534906991738.jpg" alt="tottenham hotspur">
+                        <figcaption>
+
+                        </figcaption>
+                    </figure>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+
+
+    @RenderBody()
+
+    <section class="contact-section" id="contact">
+        <div class="row">
+            <div class="col span-1-of-3">
+                <ul class="information">
+                    <li><i class="fas fa-map-marker-alt small-icon"></i>Address: 21A, SelfTaught street, Ha Noi</li>
+                    <li><i class="fas fa-envelope small-icon"></i>Email: selftaughtteam@edu.com</li>
+                    <li><i class="fas fa-phone small-icon"></i>SĐT: (+084 )099-923-232-320</li>
+                </ul>
+                <ul class="social-icons">
+                    <li><i class="fab fa-facebook"></i></li>
+                    <li><i class="fab fa-twitter-square"></i></li>
+                    <li><i class="fab fa-instagram"></i></li>
+                    <li><i class="fab fa-google-plus-square"></i></li>
+                </ul>
+            </div>
+            <div class="col span-2-of-3">
+                <form>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Họ và tên</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" placeholder="Nhập họ và tên">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Email</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="email" placeholder="Nhập email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Tin nhắn</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <textarea placeholder="Nhập lời liên hệ"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="submit" class="btn" value="Gửi">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>
+           
+        </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script src="resources/js/scripts.js"></script>
+</body>
+
+</html>

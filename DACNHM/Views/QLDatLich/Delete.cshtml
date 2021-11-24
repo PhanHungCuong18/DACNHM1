@@ -1,0 +1,65 @@
+﻿@model DACNHM.Models.PhieuDKHienMau
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h3>Bạn có muốn xóa ?</h3>
+<div>
+    <h4>PhieuDKHienMau</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+
+        <dd>
+            <b> Ngày đăng ký hiến máu:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.NgayDKHienMau)
+        </dd>
+
+        
+
+        <dd>
+            <b> Số lượng máu đăng ký hiến:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.SoLuongMauDKHien)
+        </dd>
+
+      
+
+        <dd>
+            <b> Người hiến máu </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.NguoiHienMau.TenNgHien)
+        </dd>
+
+       
+
+        <dd>
+            <b> Địa điểm đăng ký hiến:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.DotToChuc.DiaDiemHienMau.TenDiaDiem)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" style="background-color: #0026ff; border-radius: 15px" />
+            &emsp; &emsp; &emsp;<a href="@Url.Action("Index","QLDatLich")" style="background-color: #dc3545; border-radius: 15px " class="btn btn-default">Quay trở lại</a>
+
+
+        </div>
+
+    }
+
+</div>
+<style>
+    dt {
+        margin: 0 50px;
+    }
+
+    dd {
+        margin: 0 50px;
+    }
+</style>

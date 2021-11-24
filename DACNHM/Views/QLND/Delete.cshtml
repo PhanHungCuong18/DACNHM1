@@ -1,0 +1,87 @@
+﻿@model DACNHM.Models.NguoiHienMau
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3>Bạn có thật sự muốn xóa ?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dd>
+            <b>Họ tên:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.TenNgHien)
+        </dd>
+        <dd>
+            <b>CCCD:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.SoCCCD)
+        </dd>
+
+
+
+        <dd>
+            <b>Tài khoản:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.TaiKhoan)
+        </dd>
+
+
+
+        <dd>
+            <b>Mật khẩu:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.MatKhau)
+        </dd>
+
+
+
+        <dd>
+            <b> Email:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+
+
+        <dd>
+            <b>Địa chỉ:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+
+
+        <dd>
+            <b>  Điện thoại:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.Sdt)
+        </dd>
+
+
+
+        <dd>
+            <b> Ngày sinh:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.NgaySinh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Delete" class="btn btn-default" style="background-color: #0026ff; border-radius: 15px" />
+    &emsp; &emsp; &emsp;<a href="@Url.Action("Index","QLND")" style="background-color: #dc3545; border-radius: 15px" class="btn btn-default">Quay trở lại</a>
+
+</div>
+
+    }
+</div>
+<style>
+    dt {
+        margin: 0 50px;
+    }
+
+    dd {
+        margin: 0 50px;
+    }
+</style>

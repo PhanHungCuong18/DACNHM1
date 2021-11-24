@@ -1,0 +1,60 @@
+﻿@model DACNHM.Models.PhieuTinhTrangSucKhoe
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<h3>Xác nhận xóa thông tin </h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+
+        
+        <dd>
+            <b> Ngày khám</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.NgayKham)
+        </dd>
+
+       
+
+        <dd>
+            <b> Họ tên:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.NguoiHienMau.TenNgHien)
+        </dd>
+
+        
+
+        <dd>
+            <b>Tình trạng sức khỏe</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.TinhTrangSucKhoe.LoaiTTSK)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" style="background-color: #0026ff; border-radius: 15px" />
+            &emsp; &emsp; &emsp;<a href="@Url.Action("Index","TTSK")" style="background-color: #dc3545; border-radius: 15px " class="btn btn-default">Quay trở lại</a>
+
+
+        </div>
+
+    }
+
+</div>
+<style>
+    dt {
+        margin: 0 50px;
+    }
+
+    dd {
+        margin: 0 50px;
+    }
+</style>

@@ -1,0 +1,91 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HHH</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Image/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Image/favicon-16x16.png">
+    <link rel="manifest" href="~/Image/site.webmanifest">
+    <link rel="mask-icon" href="~/Image/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="~/Image/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="~/Image/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/grid.css">
+
+    <link rel="stylesheet" type="text/css" href="~/Content/styles.css" />
+    <link rel="stylesheet" href="~/Content/queries.css">
+</head>
+
+<body>
+    <header id="home">
+        <nav>
+            <a href="#home"><img class="logo" src="~/Image/logo.png" alt="logo"></a>
+            <ul class="main-nav">
+                <!-- unordered list -->
+                <!-- list item -->
+                <li><a href="#about">GIỚI THIỆU</a></li>
+                <li><a href="#products">ĐƠN VỊ MÁU</a></li>
+                <li><a href="#sponsors">TIN TỨC</a></li>
+                <li><a href="#about">TRA CỨU</a></li>
+                <li><a href="#contact">LIÊN HỆ</a></li>
+
+                <li>
+                    @if (Session["Taikhoan"] != null)
+                    {
+                        <a href="@Url.Action("TTTK","User", new {id=  Session["id"] })">THÔNG TIN TÀI KHOẢN</a>
+                    }
+                    else
+                    {
+                        <a href="#"></a>
+                    }
+                </li>
+                <li>
+                    @if (Session["TaiKhoan"] != null)
+                    {
+                        @*<a href="#" style="font-weight:bold">Xin Chào: @Session["tk"] </a>*@
+                        <a href="@Url.Action("DangXuat","User")">ĐĂNG XUẤT</a>
+
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Dangnhap","User")">ĐĂNG NHẬP</a>
+
+                    }
+                </li>
+            </ul>
+
+            <i class="fas fa-bars mobile-nav-icon"></i>
+        </nav>
+        <div class="p-long">
+            @RenderBody()
+            </div>
+</header>
+    
+   
+
+
+    
+
+    
+
+    <footer>
+        <p>
+
+        </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script src="resources/js/scripts.js"></script>
+</body>
+
+</html>

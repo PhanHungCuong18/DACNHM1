@@ -1,0 +1,70 @@
+﻿@using DACNHM.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<Admin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    var keyword = TempData["kwd"];
+}
+
+
+
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-body">
+            @Html.ActionLink("Thêm mới", "Create")
+        </div>
+        <div class="table-responsive">
+            <div style="display:inline-block;width:100%">
+                <div style="float:right">
+                    <form action="/TKAD/TimKiem" method="post">
+                        <input type="text" name="keyword" style="color:inherit" />
+                        <button type="submit" style="color:inherit">Tìm kiếm</button>
+                    </form>
+                </div>
+            </div>
+            <table class="table table-hover" style="border:double">
+                <thead>
+                    <tr>
+                        <th style="border:double" class="border-top-0"> Tài khoản admin</th>
+                        <th style="border:double" class="border-top-0">Mật khẩu admin</th>
+                        <th style="border:double" class="border-top-0"> Họ tên</th>
+                        <th class="border-top-0" style="border:double"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td style="border:double" class="txt-oflo"> @Html.DisplayFor(modelItem => item.UserAdmin)</td>
+                            <td style="border:double" class="txt-oflo">@Html.DisplayFor(modelItem => item.PassAdmin)</td>
+                            <td style="border:double"><span class="label label-success label-rounded"> @Html.DisplayFor(modelItem => item.Hoten)</span> </td>
+                            <td style="border:double">
+                                <span class="font-medium">
+                                    @Html.ActionLink("Sửa", "Edit", new { id = item.UserAdmin }) |
+                                    @Html.ActionLink("Chi Tiết", "Details", new { id = item.UserAdmin }) |
+                                    @Html.ActionLink("Xóa", "Delete", new { id = item.UserAdmin })
+                                </span>
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="pagination pagination-small pagination-centered" align="center">
+    <ul>
+
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+
+    </ul>
+</div>
+
+

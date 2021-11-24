@@ -1,0 +1,57 @@
+﻿@model DACNHM.Models.Admin
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3>Bạn có thật sự muốn xóa ?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dd>
+            <b> Tài khoản admin:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.UserAdmin)
+        </dd>
+
+
+
+        <dd>
+            <b>Mật khẩu admin:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.PassAdmin)
+        </dd>
+
+
+
+        <dd>
+            <b> Họ tên:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.Hoten)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Delete" class="btn btn-default" style="background-color: #0026ff; border-radius: 15px" />
+    &emsp; &emsp; &emsp;<a href="@Url.Action("Index","TKAD")" style="background-color: #dc3545; border-radius: 15px " class="btn btn-default">Quay trở lại</a>
+
+
+</div>
+
+    }
+
+</div>
+<style>
+    dt {
+        margin: 0 50px;
+    }
+
+    dd {
+        margin: 0 50px;
+    }
+</style>
+

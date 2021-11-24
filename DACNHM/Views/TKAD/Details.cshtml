@@ -1,0 +1,46 @@
+﻿@model DACNHM.Models.Admin
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dd>
+            <b>Tài khoản admin:</b>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(model => model.UserAdmin)
+        </dd>
+
+
+        <dd>
+            <b>  Mật khẩu admin:</b>&nbsp; &nbsp;&nbsp;
+            @Html.DisplayFor(model => model.PassAdmin)
+        </dd>
+        <dd>
+            <b>  Họ Tên:</b>&nbsp; &nbsp;&nbsp;
+            @Html.DisplayFor(model => model.Hoten)
+        </dd>
+    </dl>
+</div>
+<p>
+    &emsp; &emsp; &emsp; <a href="@Url.Action("Edit","TKAD", new {id = Model.UserAdmin })" style="background-color:#00266f; border-radius:15px" class="btn btn-default">Edit</a>&nbsp; &nbsp; &nbsp; &nbsp;
+    
+    <a href="@Url.Action("Index","TKAD")" style="background-color: #dc3545; border-radius: 15px" class="btn btn-default">Quay trở lại</a>
+</p>
+<style>
+    dt {
+        margin: 0 50px;
+    }
+
+    dd {
+        margin: 0 50px;
+    }
+</style>
+
+
